@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from time import sleep
 
-def waitLoad(driver):
+def wait_load(driver):
     found = True
     max = 99
     count = 0

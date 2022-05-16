@@ -6,13 +6,12 @@ import os
 import argparse
 from time import sleep
 
-from lib.getListed import *
-from lib.waitLoad import *
-from lib.getNewAsset import *
-from lib.checkTelegram import *
+from lib.wait_load import *
+from lib.get_new_asset import *
+from lib.check_tel_config import *
 from lib.selaux import *
 
-def getChange(LAF, browtype):
+def get_change(LAF, browtype):
     change = None
     try:
         f = open(LAF, 'x')
@@ -22,13 +21,13 @@ def getChange(LAF, browtype):
     f = open(LAF, 'r+')
     lastAsset = f.read().split('\n')
     if not browtype:
-        driver = headlessFirefox()
+        driver = headless_firefox()
     else:
-        driver = headlessChrome()
-    getListed(driver)
-    waitLoad(driver)
-    newAssetDate = ' '.join(getNewAssetDate(driver))
-    newAssetName = getNewAssetName(driver)
+        driver = headless_chrome()
+    driver.get('https://www.coinbase.com/price/s/listed')
+    wait_load(driver)
+    newAssetDate = ' '.join(get_new_asset_date(driver))
+    newAssetName = get_new_asset_mame(driver)
     if ((lastAsset[0] != newAssetName) or (lastAsset[1] != newAssetDate)):
         f.close()
         f = open(LAF, 'w')
@@ -48,11 +47,11 @@ def main():
     delay = args.delay
     LAF = args.file
     browtype = args.browtype
-    telconfig = checkTelegram()
+    telconfig = check_tel_config()
     if not telconfig:
         print('[!] There is no telegram-send configuration!')
     while telconfig:
-        change = getChange(LAF, browtype)
+        change = get_change(LAF, browtype)
         if change:
             os.system('telegram-send --format html "❕ A 🆕 Asset has been added ➡️ <b>' + change[0] + '</b> (' + change[1] + ')"')
         sleep(delay)

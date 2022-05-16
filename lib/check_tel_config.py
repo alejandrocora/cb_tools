@@ -1,7 +1,7 @@
 import getpass
 from os.path import exists
 
-def checkTelegram():
+def check_tel_config():
     if getpass.getuser() != 'root':
         return exists('/home/'+getpass.getuser()+'/.config/telegram-send.conf')
     else:
