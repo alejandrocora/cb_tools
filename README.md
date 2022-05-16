@@ -16,4 +16,4 @@ A Telegram bot should be configured before running. Do `$ telegramd-send --confi
 
 ### Running
 
-To run **nawa** use the command `nawa`. To change the path for the file nawa uses to store the last added asset, use the parameter `--file` or `-f`. To change the delay for nawa checkings, use `--delay` or `-d` followed by the time in seconds. I.e `nawa --file ~/.config/nawa.log --delay 600`, nawa will save the file in `~/.config/nawa.log` and run every 10 minutes.
+To run **nawa** use the command `nawa`. To change the path for the file nawa uses to store the last added asset, use the parameter `--file` or `-f`. To change the delay for nawa checkings, use `--delay` or `-d` followed by the time in seconds. I.e `$ nawa --file ~/.config/nawa.log --delay 600`, nawa will save the file in `~/.config/nawa.log` and run every 10 minutes.
