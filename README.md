@@ -5,9 +5,9 @@
 
 ## Installation
 
-`$ git clone https://github.com/alejandrocora/cb_tools`
-`$ cd cb_tools`
-`$ pip3 install .`
+`$ git clone https://github.com/alejandrocora/cb_tools`  
+`$ cd cb_tools`  
+`$ pip3 install .`  
 
 
 ### NAWA
