@@ -12,7 +12,6 @@ setup(
     description=("Tool set for CoinBase data management"),
     version='0.1.1',
     install_requires=requires,
-    packages=find_packages(),
     entry_points={
         'console_scripts': ['nawa=cb_tools.nawa:main'],
     },
