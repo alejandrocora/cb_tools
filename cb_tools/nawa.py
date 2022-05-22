@@ -27,7 +27,7 @@ def get_change(LAF, browtype):
     driver.get('https://www.coinbase.com/price/s/listed')
     wait_load(driver)
     newAssetDate = ' '.join(get_new_asset_date(driver))
-    newAssetName = get_new_asset_mame(driver)
+    newAssetName = get_new_asset_name(driver)
     if ((lastAsset[0] != newAssetName) or (lastAsset[1] != newAssetDate)):
         f.close()
         f = open(LAF, 'w')
