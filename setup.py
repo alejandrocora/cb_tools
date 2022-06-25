@@ -9,8 +9,8 @@ requires = [
 
 setup(
     name='cb_tools',
-    description=("Tool set for CoinBase data management"),
-    version='0.1.1',
+    description=("Tool set for CoinBase data management."),
+    version='0.1.2',
     install_requires=requires,
     packages=find_packages(),
     entry_points={

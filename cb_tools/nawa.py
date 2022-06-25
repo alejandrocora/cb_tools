@@ -6,10 +6,10 @@ import os
 import argparse
 from time import sleep
 
-from .cb_lib.wait_load import *
-from .cb_lib.get_new_asset import *
-from .cb_lib.check_tel_config import *
-from .cb_lib.selaux import *
+from cb_lib.wait_load import *
+from cb_lib.get_new_asset import *
+from cb_lib.check_tel_config import *
+from cb_lib.selaux import *
 
 def get_change(LAF, browtype):
     change = None
