@@ -14,7 +14,7 @@ setup(
     install_requires=requires,
     packages=find_packages(),
     entry_points={
-        'console_scripts': ['nawa=cb_tools.nawa:main'],
+        'console_scripts': ['nawa=nawa:main'],
     },
     long_description=open('README.md').read(),
     keywords=['coinbase', 'cb', 'tools', 'cb_tools', 'assets', 'scraping', 'scraper', 'telegram']
