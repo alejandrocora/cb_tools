@@ -6,7 +6,8 @@ import os
 import argparse
 from time import sleep
 
-from cb_lib.wait_load import *
+from selenium.webdriver.support.ui import WebDriverWait
+
 from cb_lib.get_new_asset import *
 from cb_lib.check_tel_config import *
 from cb_lib.selaux import *
@@ -25,7 +26,9 @@ def get_change(LAF, browtype):
     else:
         driver = headless_chrome()
     driver.get('https://www.coinbase.com/price/s/listed')
-    wait_load(driver)
+    WebDriverWait(self.driver, 120).until(
+        EC.presence_of_element_located((By.XPATH, '//div[@class="LoadingBlock__Overlay-f50e0a-2 kgHxKT"]'))
+    )
     newAssetDate = ' '.join(get_new_asset_date(driver))
     newAssetName = get_new_asset_name(driver)
     if ((lastAsset[0] != newAssetName) or (lastAsset[1] != newAssetDate)):
