@@ -8,9 +8,9 @@ from time import sleep
 
 from selenium.webdriver.support.ui import WebDriverWait
 
-from cb_lib.get_new_asset import *
-from cb_lib.check_tel_config import *
-from cb_lib.selaux import *
+from cb_tools.utils.get_new_asset import *
+from cb_tools.utils.check_tel_config import *
+from cb_tools.utils.selaux import *
 
 def get_change(LAF, browtype):
     change = None
